@@ -6,7 +6,7 @@
   <div class="card-container">
     <mat-card *ngFor='let city of data;' class="card">
       <mat-card-header>
-        <div mat-card-avatar>{{city.weather.Temperature.Imperial.Value}}&deg;F</div>
+        <div mat-card-avatar>{{city.weather.main.temp}}&deg;C</div>
         <mat-card-title>{{city.name}}</mat-card-title>
       </mat-card-header>
       <img mat-card-image src="../assets/images/{{city.name}}.jpg" alt="Snapshot of {{city.name}}">

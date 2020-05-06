@@ -7,11 +7,11 @@ export interface IChoice {
 };
 
 export interface IWeather {
-  Temperature: {
-    Imperial: {
-      Value: number
+
+    main: {
+      temp: number
     }
-  }
+
 }
 
 export interface IFlightsInfo {

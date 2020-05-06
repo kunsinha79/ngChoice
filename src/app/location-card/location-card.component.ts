@@ -20,18 +20,17 @@ export class LocationCardComponent implements OnInit {
   constructor(private weatherFlightInfoService: WeatherFlightInfoService) {}
 
   ngOnInit() {
-    this.getWeatherFlightsInfo();
-  }
-
-  getWeatherFlightsInfo() {
-    this.isLoading = true;
+    this.getFlightsInfo();
     this.weatherFlightInfoService.getWeather()
     .subscribe(([res1, res2, res3]) => {
-      this.data[0].weather = res1[0];
-      this.data[1].weather = res2[0];
-      this.data[2].weather = res3[0];
-    },
-    () => this.isLoading = false);
+      this.data[0].weather = res1.list[0];
+      this.data[1].weather = res2.list[0];
+      this.data[2].weather = res3.list[0];
+    });
+  }
+
+  getFlightsInfo() {
+    this.isLoading = true;
 
     this.weatherFlightInfoService.getFlightPrice(this.selected)
     .subscribe(([res1, res2, res3]) => {
@@ -45,7 +44,7 @@ export class LocationCardComponent implements OnInit {
 
   changeCity(city: string) {
     this.selected = city;
-    this.getWeatherFlightsInfo();
+    this.getFlightsInfo();
 
   }
 }

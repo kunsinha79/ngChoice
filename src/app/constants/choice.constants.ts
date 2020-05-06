@@ -1,13 +1,14 @@
 export const CHOICE_CONTANTS = {
-  apiWeatherUrl: 'http://dataservice.accuweather.com/currentconditions/v1/',
-  apiWeatherKey: 'o7Kgnv1pe6Z4yNqWegJDjBC3XsGCcn20',
+  apiWeatherUrl: 'https://api.openweathermap.org/data/2.5/find?q=',
+  apiWeatherKey: '4a104241c3d06ff89d4bf153cf2cbf14',
   apiFlightUrl: 'https://api.skypicker.com/flights?',
   defaultOrigin: 'CDG',
-  locationKeyAmsterdam: '248758',
-  locationKeyMadrid: '306526',
-  locationKeyBelarus: '187423',
+  locationKeyAmsterdam: 'Amsterdam',
+  locationKeyMadrid: 'Madrid',
+  locationKeyBelarus: 'Belarus',
   airportAmsterdam: 'AMS',
   airportMadrid: 'MAD',
   airportBelarus: 'MSQ',
-  apiFlightUrlPredicate: '&date_from=08/05/2020&date_to=08/09/2020&partner=picky&limit=10&sort=price'
+  apiFlightUrlPredicate: '&date_from=08/05/2020&date_to=08/09/2020&partner=picky&limit=10&sort=price',
+  apiWeatherUrlPredicate: '&units=metric&appid='
 };

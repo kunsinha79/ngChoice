@@ -11,9 +11,9 @@ export class WeatherFlightInfoService {
   constructor(private httpClient: HttpClient) { }
 
   getWeather(): Observable<any[]> {
-    const responseAms = this.httpClient.get(`${CHOICE_CONTANTS.apiWeatherUrl}${CHOICE_CONTANTS.locationKeyAmsterdam}?apikey=${CHOICE_CONTANTS.apiWeatherKey}`);
-    const responseMad = this.httpClient.get(`${CHOICE_CONTANTS.apiWeatherUrl}${CHOICE_CONTANTS.locationKeyMadrid}?apikey=${CHOICE_CONTANTS.apiWeatherKey}`);
-    const responseBel = this.httpClient.get(`${CHOICE_CONTANTS.apiWeatherUrl}${CHOICE_CONTANTS.locationKeyBelarus}?apikey=${CHOICE_CONTANTS.apiWeatherKey}`);
+    const responseAms = this.httpClient.get(`${CHOICE_CONTANTS.apiWeatherUrl}${CHOICE_CONTANTS.locationKeyAmsterdam}${CHOICE_CONTANTS.apiWeatherUrlPredicate}${CHOICE_CONTANTS.apiWeatherKey}`);
+    const responseMad = this.httpClient.get(`${CHOICE_CONTANTS.apiWeatherUrl}${CHOICE_CONTANTS.locationKeyMadrid}${CHOICE_CONTANTS.apiWeatherUrlPredicate}${CHOICE_CONTANTS.apiWeatherKey}`);
+    const responseBel = this.httpClient.get(`${CHOICE_CONTANTS.apiWeatherUrl}${CHOICE_CONTANTS.locationKeyBelarus}${CHOICE_CONTANTS.apiWeatherUrlPredicate}${CHOICE_CONTANTS.apiWeatherKey}`);
     return forkJoin([responseAms, responseMad, responseBel]);
   }
 
