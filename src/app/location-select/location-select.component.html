@@ -1,0 +1,8 @@
+<mat-form-field class="filter-field">
+  <mat-label>Current Location</mat-label>
+  <mat-select [(value)]="selected" (selectionChange)="selectCity($event)">
+    <mat-option *ngFor="let airport of airports" [value]="airport.value">
+      {{airport.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

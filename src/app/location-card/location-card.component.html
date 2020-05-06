@@ -1,0 +1,33 @@
+<div class="content" role="main">
+  <h2>Pick and Compare</h2>
+  <p>Here are some useful tips to help you get started from:
+    <app-location-select (city)="changeCity($event)"></app-location-select>
+  </p>
+  <div class="card-container">
+    <mat-card *ngFor='let city of data;' class="card">
+      <mat-card-header>
+        <div mat-card-avatar>{{city.weather.Temperature.Imperial.Value}}&deg;F</div>
+        <mat-card-title>{{city.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../assets/images/{{city.name}}.jpg" alt="Snapshot of {{city.name}}">
+      <mat-card-content>
+        <p>
+          {{city.description}}
+        </p>
+        <h4>Travel Details:</h4>
+        <div *ngIf="!isLoading else spinner">
+          <ul>
+            <li>{{city.flights[0].distance}} miles</li>
+            <li>Travel Time: {{city.flights[0].fly_duration}}</li>
+            <li>From <b>EUR {{city.flights[0].price}}</b></li>
+          </ul>
+        </div>
+        <ng-template #spinner>
+          <mat-spinner></mat-spinner>
+        </ng-template>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
