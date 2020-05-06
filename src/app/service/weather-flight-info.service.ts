@@ -21,7 +21,6 @@ export class WeatherFlightInfoService {
     const responseAms = this.httpClient.get(`${CHOICE_CONTANTS.apiFlightUrl}fly_from=${value}&fly_to=${CHOICE_CONTANTS.airportAmsterdam}${CHOICE_CONTANTS.apiFlightUrlPredicate}`);
     const responseMad = this.httpClient.get(`${CHOICE_CONTANTS.apiFlightUrl}fly_from=${value}&fly_to=${CHOICE_CONTANTS.airportMadrid}${CHOICE_CONTANTS.apiFlightUrlPredicate}`);
     const responseBel = this.httpClient.get(`${CHOICE_CONTANTS.apiFlightUrl}fly_from=${value}&fly_to=${CHOICE_CONTANTS.airportBelarus}${CHOICE_CONTANTS.apiFlightUrlPredicate}`);
-
     return forkJoin([responseAms, responseMad, responseBel]);
   }
 

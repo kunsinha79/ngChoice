@@ -25,13 +25,13 @@ export class LocationCardComponent implements OnInit {
 
   getWeatherFlightsInfo() {
     this.isLoading = true;
-    // this.weatherFlightInfoService.getWeather()
-    // .subscribe(([res1, res2, res3]) => {
-    //   this.data[0].weather = res1[0];
-    //   this.data[1].weather = res2[0];
-    //   this.data[2].weather = res3[0];
-    // },
-    // () => this.isLoading = false);
+    this.weatherFlightInfoService.getWeather()
+    .subscribe(([res1, res2, res3]) => {
+      this.data[0].weather = res1[0];
+      this.data[1].weather = res2[0];
+      this.data[2].weather = res3[0];
+    },
+    () => this.isLoading = false);
 
     this.weatherFlightInfoService.getFlightPrice(this.selected)
     .subscribe(([res1, res2, res3]) => {
