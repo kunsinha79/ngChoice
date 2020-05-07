@@ -29,7 +29,12 @@ describe('LocationCardComponent', () => {
     weatherFlightInfoService = TestBed.get(WeatherFlightInfoService);
 
     spyOn(weatherFlightInfoService, 'getCityWeather').and.callFake((): Observable<IWeather> => (
-      of({main: {temp: 10.0}})
+      of({
+        main: { temp: 10.0 },
+        weather: [
+          { main: 'cloudy'}
+        ]
+      })
     ));
     spyOn(weatherFlightInfoService, 'getCityFlightDetails').and.callFake((): Observable<IFlightsInfo> => (
       of({ price: 100, fly_duration: '', distance: ''})

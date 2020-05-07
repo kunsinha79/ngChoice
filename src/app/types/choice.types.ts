@@ -9,7 +9,12 @@ export interface IChoice {
 export interface IWeather {
     main: {
       temp: number
-    }
+    },
+    weather: [
+      {
+        main: string
+      }
+    ]
 }
 
 export interface IFlightsInfo {

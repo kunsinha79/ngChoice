@@ -7,14 +7,14 @@
   align-items: center;
 }
 
-.card-container {
+.content .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 16px;
 }
 
-.card-container .card {
+.content .card-container .card {
   border-radius: 4px;
   border: 1px solid #eee;
   background-color: #fafafa;
@@ -25,13 +25,21 @@
   line-height: 24px;
 }
 
-.card-container .card:not(:last-child) {
-  margin-right: 0;
+.content .card-container .card .Amsterdam-header-image {
+  background-image: url('../../assets/images/Amsterdam.jpg');
+  background-size: cover;
+}
+.content .card-container .card .Madrid-header-image {
+  background-image: url('../../assets/images/Madrid.jpg');
+  background-size: cover;
+}
+.content .card-container .card .Budapest-header-image {
+  background-image: url('../../assets/images/Budapest.jpg');
+  background-size: cover;
 }
 
-.card.card-small {
-  height: 16px;
-  width: 168px;
+.content  .card-container .card:not(:last-child) {
+  margin-right: 0;
 }
 
 .card-container .card:not(.highlight-card) {

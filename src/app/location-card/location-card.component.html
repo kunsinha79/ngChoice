@@ -6,20 +6,22 @@
   <div class="card-container">
     <mat-card *ngFor='let city of data;' class="card">
       <mat-card-header>
-        <div mat-card-avatar>{{city.weather.main.temp}}&deg;C</div>
+        <div mat-card-avatar ngClass="{{city.name}}-header-image"></div>
         <mat-card-title>{{city.name}}</mat-card-title>
+        <mat-card-subtitle>Description/Weather/Flights for {{city.name}} </mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src="../assets/images/{{city.name}}.jpg" alt="Snapshot of {{city.name}}">
       <mat-card-content>
         <p>
           {{city.description}}
         </p>
-        <h4>Travel Details:</h4>
+        <p><strong>Weather:</strong> {{city.weather.main.temp}}&deg;C ({{city.weather.weather[0].main}})</p>
+        <p><strong>Flight Details:</strong></p>
         <div *ngIf="!isLoading else spinner">
           <ul>
             <li>{{city.flights.distance}} miles</li>
             <li>Travel Time: {{city.flights.fly_duration}}</li>
-            <li>From <b>EUR {{city.flights.price}}</b></li>
+            <li>From <strong>EUR {{city.flights.price}}</strong><sup>*</sup></li>
           </ul>
         </div>
         <ng-template #spinner>
@@ -27,6 +29,9 @@
         </ng-template>
 
       </mat-card-content>
+      <mat-card-actions>
+        <p *ngIf="!isLoading"><sup>*</sup> Best price for given date range</p>
+      </mat-card-actions>
     </mat-card>
 
   </div>

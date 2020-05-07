@@ -24,10 +24,24 @@ describe('WeatherFlightInfoService', () => {
   });
 
   it('should return weather of the city requested', () => {
-    spyOn(http, 'get').and.returnValue(of({list: [{main: {temp: 10.0}}]}));
+    spyOn(http, 'get').and.returnValue(of({
+      list: [
+        {
+          main: { temp: 10.0 },
+          weather: [
+            { main: 'cloudy'}
+          ]
+        }
+      ]
+    }));
     service.getCityWeather('ams')
       .subscribe((x: IWeather) => {
-        expect(x).toEqual({main: {temp: 10.0}});
+        expect(x).toEqual({
+          main: { temp: 10.0 },
+          weather: [
+            { main: 'cloudy'}
+          ]
+        });
         expect(http.get).toHaveBeenCalled();
       });
   });
