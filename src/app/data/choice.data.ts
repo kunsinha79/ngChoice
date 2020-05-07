@@ -14,11 +14,11 @@ let cities: IChoice[] =  [
                   'From Amsterdam canals to world-famous Amsterdam museums and historical Amsterdam sights,' +
                   'it is one of the most romantic and beautiful cities in Europe. Canal cruises are a popular way to see the city from the perspective of its canals.',
     selection: false,
-    flights: [{
+    flights: {
       price: 0,
       fly_duration: '',
       distance: ''
-    }]
+    }
   },
   {
     name: 'Madrid',
@@ -33,11 +33,11 @@ let cities: IChoice[] =  [
                   'It is a modern metropolitan city and an economical and industrial center of Spain, and, ' +
                   'with its population of nearly 3,5 million people, is also the biggest city in Spain',
     selection: false,
-    flights: [{
+    flights: {
       price: 0,
       fly_duration: '',
       distance: ''
-    }]
+    }
   },
  {
     name: 'Budapest',
@@ -52,11 +52,11 @@ let cities: IChoice[] =  [
                   'The city straddles the Danube (Hungarian: Duna) River in the magnificent natural setting where the hills of western Hungary' +
                   ' meet the plains stretching to the east and south.',
     selection: false,
-    flights: [{
+    flights: {
       price: 0,
       fly_duration: '',
       distance: ''
-    }]
+    }
   }
 ];
 

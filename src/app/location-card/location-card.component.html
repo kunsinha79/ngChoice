@@ -17,9 +17,9 @@
         <h4>Travel Details:</h4>
         <div *ngIf="!isLoading else spinner">
           <ul>
-            <li>{{city.flights[0].distance}} miles</li>
-            <li>Travel Time: {{city.flights[0].fly_duration}}</li>
-            <li>From <b>EUR {{city.flights[0].price}}</b></li>
+            <li>{{city.flights.distance}} miles</li>
+            <li>Travel Time: {{city.flights.fly_duration}}</li>
+            <li>From <b>EUR {{city.flights.price}}</b></li>
           </ul>
         </div>
         <ng-template #spinner>

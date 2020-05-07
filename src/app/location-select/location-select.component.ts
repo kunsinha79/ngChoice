@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ISelectPair } from '../types/choice.types';
 import { CHOICE_CONTANTS } from '../constants/choice.constants';
+import { MatSelect } from '@angular/material/select';
 
 
 @Component({
@@ -18,11 +19,11 @@ export class LocationSelectComponent {
   selected = CHOICE_CONTANTS.defaultOrigin;;
 
   @Output() city = new EventEmitter<string>();
+  @ViewChild(MatSelect) public matSelect: MatSelect;
 
   constructor() { }
 
   selectCity(event) {
     this.city.emit(event.source.value);
   }
-
 }

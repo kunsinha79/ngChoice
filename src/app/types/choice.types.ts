@@ -3,15 +3,13 @@ export interface IChoice {
   weather: IWeather,
   description: string,
   selection: boolean,
-  flights: IFlightsInfo[]
+  flights: IFlightsInfo
 };
 
 export interface IWeather {
-
     main: {
       temp: number
     }
-
 }
 
 export interface IFlightsInfo {
@@ -23,4 +21,12 @@ export interface IFlightsInfo {
 export interface ISelectPair {
   value: string,
   viewValue: string
+}
+
+export interface IWeatherList {
+  list: IWeather[]
+}
+
+export interface IFlightsInfoList {
+  data: IFlightsInfo
 }
