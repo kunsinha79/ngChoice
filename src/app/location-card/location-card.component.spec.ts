@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { DatePipe } from '@angular/common';
 
 import { LocationCardComponent } from './location-card.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -18,7 +19,7 @@ describe('LocationCardComponent', () => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule, MatCardModule, BrowserAnimationsModule ],
       declarations: [ LocationCardComponent, LocationSelectComponent ],
-      providers: [ WeatherFlightInfoService ]
+      providers: [ WeatherFlightInfoService, DatePipe ]
     })
     .compileComponents();
   }));

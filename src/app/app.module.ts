@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,6 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LocationCardComponent } from './location-card/location-card.component';
 import { LocationSelectComponent } from './location-select/location-select.component';
-
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { LocationSelectComponent } from './location-select/location-select.compo
     MatSelectModule,
     MatProgressSpinnerModule
   ],
-  providers: [WeatherFlightInfoService],
+  providers: [WeatherFlightInfoService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

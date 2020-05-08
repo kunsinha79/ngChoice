@@ -9,6 +9,7 @@ export const CHOICE_CONTANTS = {
   airportAmsterdam: 'AMS',
   airportMadrid: 'MAD',
   airportBelarus: 'MSQ',
-  apiFlightUrlPredicate: '&date_from=08/05/2020&date_to=08/09/2020&partner=picky&limit=10&sort=price',
-  apiWeatherUrlPredicate: '&units=metric&appid='
+  apiFlightUrlPredicate: '&partner=picky&limit=10&sort=price',
+  apiWeatherUrlPredicate: '&units=metric&appid=',
+  dateFormat: 'dd/MM/yyyy'
 };

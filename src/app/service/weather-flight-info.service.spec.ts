@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
+import { DatePipe } from '@angular/common';
 
 import { WeatherFlightInfoService } from './weather-flight-info.service';
 import { HttpClient } from '@angular/common/http';
@@ -13,7 +14,7 @@ describe('WeatherFlightInfoService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [WeatherFlightInfoService, HttpClient]
+      providers: [WeatherFlightInfoService, HttpClient, DatePipe]
     });
     service = TestBed.inject(WeatherFlightInfoService);
     http = TestBed.get(HttpClient);
