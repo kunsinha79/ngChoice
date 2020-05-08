@@ -37,10 +37,10 @@ export class LocationCardComponent implements OnInit {
       this.weatherFlightInfoService.getCityWeather(CHOICE_CONTANTS.locationKeyBelarus)
     ).pipe(
       takeUntil(this.unsubscribeWeather$)
-    ).subscribe(([res1, res2, res3]) => {
-      this.data[0].weather = res1;
-      this.data[1].weather = res2;
-      this.data[2].weather = res3;
+    ).subscribe(([resAms, resMad, resBel]) => {
+      this.data[0].weather = resAms;
+      this.data[1].weather = resMad;
+      this.data[2].weather = resBel;
     });
   }
 
@@ -53,10 +53,10 @@ export class LocationCardComponent implements OnInit {
       this.weatherFlightInfoService.getCityFlightDetails(this.selected, CHOICE_CONTANTS.airportBelarus)
     ).pipe(
       takeUntil(this.unsubscribeFlightInfo$)
-    ).subscribe(([res1, res2, res3]) => {
-      this.data[0].flights = res1;
-      this.data[1].flights = res2;
-      this.data[2].flights = res3;
+    ).subscribe(([resAms, resMad, resBel]) => {
+      this.data[0].flights = resAms;
+      this.data[1].flights = resMad;
+      this.data[2].flights = resBel;
       this.isLoading = false;
     },
     () => this.isLoading = false);
